@@ -14,7 +14,7 @@ namespace ArtificerFullSwim;
 public class ArtificerFullSwimMain : BaseUnityPlugin {
     public const string PLUGIN_GUID = "zohnannor.artificerfullswim";
     public const string PLUGIN_NAME = "Artificer Full Swim";
-    public const string PLUGIN_VERSION = "1.0.0";
+    public const string PLUGIN_VERSION = "1.0.1";
 
 
     private bool initDone = false;
@@ -29,6 +29,8 @@ public class ArtificerFullSwimMain : BaseUnityPlugin {
 
     public void OnDisable() {
         On.RainWorld.OnModsInit -= OnModsInit;
+        On.VoidSea.VoidWorm.Update -= VoidWorm_Update;
+        Options = null;
     }
 
     private void OnModsInit(On.RainWorld.orig_OnModsInit orig, RainWorld self) {
@@ -48,6 +50,10 @@ public class ArtificerFullSwimMain : BaseUnityPlugin {
 
     private void VoidWorm_Update(On.VoidSea.VoidWorm.orig_Update orig, VoidSea.VoidWorm self, bool eu) {
         orig(self, eu);
+
+        if (Options == null || !Options.Enabled.Value) {
+            return;
+        }
 
         if (!self.mainWorm || self.voidSea.room.game.StoryCharacter != SlugcatStatsName.Artificer) {
             return;
