@@ -1,0 +1,14 @@
+{
+    "id": "zohnannor.artificerfullswim",
+    "name": "Artificer Full Swim",
+    "version": "1.0.0",
+    "target_game_version": "v1.11.8",
+    "authors": "zohnannor",
+    "description": "[SPOILERS FOR ARTIFICER ALT ENDING!]\nMakes you swim the full distance in the Void Sea as Artificer.\n\nIn the regular ascension endings, the Void Worm helps you out by grabbing you and dragging you deep down, closer to the White Light. In the case of Artificer, the Worm ignores you and swims down, shortly followed by the ending being triggered. This mod delays that until you have swum the full distance other slugcats cover, without any assistance from the Worm.\nBeware: this will take a VERY LONG time (around an hour of dashing straight down).\n\nhttps://github.com/zohnannor/ArtificerFullSwim",
+    "requirements": [
+        "moreslugcats"
+    ],
+    "requirements_names": [
+        "More Slugcats Expansion"
+    ]
+}
